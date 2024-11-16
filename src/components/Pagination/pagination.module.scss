@@ -1,0 +1,35 @@
+@use "src/assets/styles" as *;
+
+.container {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+
+  &_prevAndNext {
+    @include bodyRegular;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  &_pages {
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+
+    &_page {
+      padding: 4px 12px;
+      background: $primary;
+      @include bodyRegular;
+      font-weight: 700;
+      border-radius: 4px;
+      transition: 200ms;
+
+      &_active {
+        background: $card-color;
+        transition: 200ms;
+      }
+    }
+  }
+}

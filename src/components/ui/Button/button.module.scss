@@ -1,0 +1,40 @@
+@use "src/assets/styles" as *;
+
+.button {
+  width: 100%;
+  padding: 16px 28px;
+  color: #FFFFFF;
+  background-color: $primary;
+  outline: none;
+  border: none;
+  appearance: none;
+  border-radius: 10px;
+  transition: 200ms;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: 'Montserrat', 'Montserrat Fallback', serif;
+
+  &_sm {
+    padding: 10px 20px !important;
+  }
+
+  &_outline {
+    border: 1px solid #FFFFFF;
+    background-color: transparent;
+    transition: 200ms;
+
+    &:disabled {
+      opacity: .5;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}

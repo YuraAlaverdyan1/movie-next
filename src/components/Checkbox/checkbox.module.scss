@@ -1,0 +1,34 @@
+@use "src/assets/styles" as *;
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-family: 'Montserrat', 'Montserrat Fallback', serif;
+}
+
+.checkboxInput {
+  display: none; /* Hide the default checkbox */
+}
+
+.checkboxCustom {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  position: relative;
+  margin-right: 10px;
+  background-color: $input-color;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.checkboxInput:checked + .checkboxCustom {
+  background-color: $primary; /* Green background when checked */
+}
+
+.checkboxInput:checked + .checkboxCustom::after {
+  opacity: 1; /* Show the checkmark when checked */
+}
+
+.checkboxLabel {
+  @include caption
+}

@@ -1,0 +1,133 @@
+@use "../../../assets/styles/index" as *;
+
+.container {
+  padding: 120px;
+  width: 100vw;
+  min-height: 100vh;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+
+  @media (max-width: 700px) {
+    padding: 80px 24px;
+    gap: 80px;
+  }
+
+  &_title {
+    @include headingTwo;
+
+    @media (max-width: 700px) {
+      @include headingThree;
+    }
+  }
+
+  &_content {
+    display: flex;
+    gap: 127px;
+    height: 70%;
+    min-height: 507px;
+
+    @media (max-width: 700px) {
+      flex-direction: column-reverse;
+      gap: 24px;
+      justify-content: flex-end;
+      height: 100%;
+    }
+  }
+
+  &_upload {
+    width: 100%;
+    position: relative;
+
+
+    @media (max-width: 700px) {
+      min-height: 372px;
+    }
+
+
+    & > input {
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 1;
+
+      @media (max-width: 700px) {
+        min-height: 372px;
+      }
+    }
+
+    & > img {
+      position: absolute;
+      top: 0;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      background: $input-color;
+      border-radius: 10px;
+      border: 2px dashed #FFFFFF;
+      z-index: 0;
+    }
+
+    &_body {
+      position: absolute;
+      top: 0;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      background: $input-color;
+      border-radius: 10px;
+      border: 2px dashed #FFFFFF;
+      z-index: 0;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      flex-direction: column;
+
+      & > img {
+        width: 16px;
+        height: 16px;
+      }
+
+      & > p {
+        @include caption;
+      }
+    }
+  }
+
+  &_form {
+    display: flex;
+    width: 75%;
+    flex-direction: column;
+    gap: 64px;
+
+    @media (max-width: 700px) {
+      width: 100%;
+    }
+
+    &_inputBox {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    &_actionBox {
+      display: flex;
+      gap: 16px;
+
+      @media (max-width: 700px) {
+        display: none;
+      }
+    }
+
+    &_actionBox_media {
+      display: none;
+
+      @media (max-width: 700px) {
+        display: flex;
+        width: 100%;
+        gap: 16px;
+      }
+    }
+  }
+}
